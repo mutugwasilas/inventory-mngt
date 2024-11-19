@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!--<link rel="stylesheet" href="{% static 'auth/auth.css' %}">-->
+
+
+{% block content %}
+<div class="form-container">
+    {% if page == 'login' %}
+    <div class="login-form">
+        <form action="" method="POST">
+            <fieldset>
+                <legend class="border-bottom pd-2 mb-4 text-center">Login Form</legend>
+             {% csrf_token %}
+           
+
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Username...">
+
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Your password">
+
+            <input type="submit" value="Sign In">
+
+            <p>don't have an account?</p>
+            <a href="{% url 'register' %}">Sign up</a>
+            </fieldset>
+        </form>
+
+       
+    </div>
+
+    {% else %}
+    <div class="register-form">
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{form.as_p}}
+
+            <input type="submit" value="Sign Up">
+
+            <p>already signed up?</p>
+           <a href="{% url 'login' %}" style="text-transform: capitalize;">sign in</a>
+        </form>
+
+        
+
+
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

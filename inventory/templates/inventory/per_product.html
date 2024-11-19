@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="content-section">
+        <div class="row mx-auto justify-content-center">
+
+            <div class="card m-4" style="width: 16rem;">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Product Name</h4>
+                    <div class="text-center" style="font-size: 30px;">
+                        <span><i class="fa-brands fa-product-hunt"></i></span>
+                    </div>
+                    <h3 class="text-center" >{{ inventory.name }}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 16rem;">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Category</h4>
+                    <div class="text-center" style="font-size: 30px;">
+                        <span><i class="fas fa-tags"></i></span>
+                    </div>
+                    <h3 class="text-center">{{ inventory.category }}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 16rem;">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Unit</h4>
+                    <div class="text-center" style="font-size: 30px;">
+                        <span><i class="fa-sharp-duotone fa-solid fa-ruler"></i></span>
+                    </div>
+                    <h3 class="text-center">{{ inventory.unit }}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 16rem;">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Quantity in Stock</h4>
+                    <div class="text-center" style="font-size: 30px;">
+                        <span><i class="fa-solid fa-warehouse"></i></span>
+                    </div>
+                    <h3 class="text-center">{{ inventory.quantity_in_stock }}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 16rem;">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Quantity Sold</h4>
+                    <div class="text-center" style="font-size: 30px;">
+                        <span><i class="fa-solid fa-cart-shopping"></i></span>
+                    </div>
+                    <h3 class="text-center">{{ inventory.quantity_sold }}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 16rem;">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Selling Price</h4>
+                    <div class="text-center" style="font-size: 30px;">
+                        <span><i class="fa-solid fa-dollar-sign"></i></span>
+                    </div>
+                    <h3 class="text-center">{{ inventory.sell_price }}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 16rem;">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Sales</h4>
+                    <div class="text-center" style="font-size: 30px;">
+                        <span><i class="fa-solid fa-chart-line"></i></span>
+                    </div>
+                    <h3 class="text-center">{{ inventory.sales }}</h3>
+                </div>
+            </div>
+
+            <div class="card m-4" style="width: 16rem;">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Profit - Loss</h4>
+                    <div class="text-center" style="font-size: 30px;">
+                        <span><i class="fa-solid fa-chart-line"></i></span>
+                    </div>
+                    <h3 class="text-center">{{ inventory.profit_loss }}</h3>
+                </div>
+            </div>
+
+            
+            <a class="btn btn-outline-success btn-sm mb-2" href="{% url 'update_product' inventory.id %}">Update</a>
+            <a class="btn btn-danger btn-sm " href="{% url 'delete' inventory.id %}">Delete</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,6 @@
+django
+django-crispy-forms
+plotly
+django-pandas
+numpy
+pandas

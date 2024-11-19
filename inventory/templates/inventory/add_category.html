@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<div class="content-section">
+    {{ form.media }}
+    <form method="POST">
+        <fieldset>
+            <legend class="border-bottom pd-2 mb-4 text-center">Add category</legend>
+            {% csrf_token %}
+
+            <div class="form-group">
+                {{ categoryform }}
+            </div>
+            <div class="form-group pt-4">
+                <button class="btn btn-outline-success" type="submit">Add category</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
